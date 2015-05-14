@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='portfolio'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vishal's Portfolio Resume</title>
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.0-rc.1/angular.js" data-semver="1.4.0-rc.1"></script>
+    <script data-require="angular-route@1.4.0-rc.1" data-semver="1.4.0-rc.1" src="https://code.angularjs.org/1.4.0-rc.1/angular-route.js"></script>
+    <script data-require="angular-resource@1.4.0-rc.1" data-semver="1.4.0-rc.1" src="https://code.angularjs.org/1.4.0-rc.1/angular-resource.js"></script>
+    <script data-require="jquery@2.1.3" data-semver="2.1.3" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body>
+<!--    <h1>Hello {{name}}!</h1>-->
+    <section ng-controller='MainCtrl'>
+      <div class="container container-main">
+        <img src="img/1da9664.jpg" class="profile-img">
+        <header >
+          <h1>HELLO, <br> my name is <strong>{{personalDetails.name}}</strong> and I am a Full stack web developer</h1>
+        </header>
+        <img src="img/line.png" class="line">
+        <div class="row">
+          <div class="col-md-7">
+            <h2>About Me</h2>
+            <p>{{personalDetails.aboutMe}}</p>
+          </div>
+          <div class="col-md-5">
+            <h2>Contact</h2>
+            <ul class="contact-list">
+              <li><img src="img/phone.png"> {{personalDetails.phone}}</li>
+              <li><img src="img/email.png"> {{personalDetails.email}}</li>
+              <li><img src="img/facebook.png"> Facebook<span>{{personalDetails.fbName}}</span></li>
+              <li><img src="img/twitter.png"> Twitter <span>{{personalDetails.twitName}}</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-7">
+            <h2>Education & Experience</h2>
+                <div ng-repeat="exp in experiences" style="display:inline-block;">
+                     <ng-experience-custom exp-obj="exp"></ng-experience-custom>
+                </div>
+          </div>
+          <div class="col-md-5">
+            <h2>Programming Skills</h2>
+             <!--<div>-->
+             <!--   <ng-skill-custom skill-obj="skill" ng-repeat="skill in skills" style="display:inline-block;"></ng-skill-custom>-->
+             <!--</div>-->
+            <div class="progress" ng-repeat="skill in skills">
+              <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width:100%;">
+                {{skill.skill}}
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Recent Projects</h2>
+            <ul class="work-list">
+              <li><a href="#"><img src="img/work1.png"></a></li>
+              <li><a href="#"><img src="img/work2.png"></a></li>
+              <li><a href="#"><img src="img/work3.png"></a></li>
+              <li><a href="#"><img src="img/work4.png"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+        <img src="img/line.png" class="line">
+        <h1 class="site-css"> About the site</h1>
+        <p>this site was built using AngularJS and hosted on Github Pages. You can view the source code on <a href="https://github.com/vishalchilate/Portfolio.git">github</a> too!</p>
+        </div>
+        </div>
+      </section>
+    
+     
+
+     
+    <footer>
+      <div class="container">
+        <p>Copyright &copy; Vishal Chilate 2015, All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>
